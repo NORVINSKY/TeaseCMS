@@ -870,19 +870,19 @@ function sitemapXML(){
 
 	//Главная
 	$sitemap.="<url>\n";
-	$sitemap.="<loc>"._URL_."</loc>\n";
+	$sitemap.="<loc>"._PROTO_._URL_."</loc>\n";
 	$sitemap.="<changefreq>daily</changefreq>\n";
 	$sitemap.="</url>\n\n";
 
 	//Карты сайта
 	$sitemap.="<url>\n";
-	$sitemap.="<loc>"._URL_."sitemap/1</loc>\n";
+	$sitemap.="<loc>"._PROTO_._URL_."sitemap/1</loc>\n";
 	$sitemap.="<changefreq>daily</changefreq>\n";
 	$sitemap.="</url>\n\n";
 
 	//Таглист
 	$sitemap.="<url>\n";
-	$sitemap.="<loc>"._URL_."tag/</loc>\n";
+	$sitemap.="<loc>"._PROTO_._URL_."tag/</loc>\n";
 	$sitemap.="<changefreq>weekly</changefreq>\n";
 	$sitemap.="</url>\n\n";
 
@@ -892,7 +892,7 @@ function sitemapXML(){
 			if(substr($tFile, -5) !== '.html'){ continue; }
 			$tSlug = substr($tFile, 0, -5);
 			$sitemap.="<url>\n";
-			$sitemap.="<loc>"._URL_."text/".$tSlug."</loc>\n";
+			$sitemap.="<loc>"._PROTO_._URL_."text/".$tSlug."</loc>\n";
 			$sitemap.="<changefreq>monthly</changefreq>\n";
 			$sitemap.="</url>\n\n";
 		}
@@ -904,7 +904,7 @@ function sitemapXML(){
 
 		foreach($links as $link){
 			$sitemap.="<url>\n";
-			$sitemap.="<loc>"._URL_.$link._EXT_."</loc>\n";
+			$sitemap.="<loc>"._PROTO_._URL_.$link._EXT_."</loc>\n";
 			$sitemap.="<changefreq>weekly</changefreq>\n";
 			$sitemap.="</url>\n\n";
 		}
